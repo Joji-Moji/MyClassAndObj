@@ -2,6 +2,7 @@ package com.example.myclassandobj
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,11 +10,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var user = User("Ivan", "id", 23) // экземпляр класса user - Обьект
-        var user2 = User("Dima", "id1", 43)
-        user.addAge(10)
-        user.addAge(23)
-        user.printUserInfo()
-        user2.printUserInfo()
+        val userInfo = user.addAge(10) // возвращенный результат запишет в userInfo
+        Log.d("MyLog", userInfo)
+
 
     }
 }
